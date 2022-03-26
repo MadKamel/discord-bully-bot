@@ -1,6 +1,6 @@
 import discord, os
 
-tokenfile = open("../token.ignore", "r") #token go brrr
+tokenfile = open("token", "r") #token go brrr
 
 token = tokenfile.read()
 

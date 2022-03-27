@@ -25,7 +25,9 @@ async def on_message(message):
         return
     if 'bully' in split_msg:
         print('Message had "bully"')
-        poor_user = client.get_user(800456043884183563) #victim
+        server = client.get_guild(666313740672565269)
+        poor_user = server.get_member_named('white man') #victim, but actually works
+        #poor_user = server.get_member(800456043884183563) #victim
         channel_1 = client.get_channel(902706256417005588)
         channel_2 = client.get_channel(666313740672565277)
         await push_around(poor_user, channel_1, channel_2)

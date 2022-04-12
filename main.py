@@ -20,6 +20,11 @@ async def on_ready():
 	print(f'{client.user} is ready.') #
 
 @client.event
+async def on_presence_update(before, after):
+	# If user not in list, add them. Also add the game being played. If it is LoL, tag them for ban in 30 minutes
+	pass
+
+@client.event
 async def on_message(message):
 	print('A user speaks: "' + message.content + '".')
 	split_msg = message.content.split(" ")
@@ -33,6 +38,10 @@ async def on_message(message):
 	if message.content.lower() == 'lol':
 		print('Message was a permutation of "lol"- send a gif.')
 		await message.channel.send("https://tenor.com/view/neptunia-laughing-neptune-lol-lmao-gif-10075190")
+
+	if 'maverick' in split_msg:
+		print('Message had "maverick"- send a gif.')
+		await message.channel.send("https://tenor.com/view/highfive-archer-cyril-topgun-gif-5655940")
 
 
 
